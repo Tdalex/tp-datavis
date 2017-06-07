@@ -159,7 +159,7 @@
 	generatePopularity("webservices/notations_user?user="+user);
 	
 	/***************************************
-		QUESTION 3
+		QUESTION 3 + 4
 	****************************************/	
 	
 	function generatePieChart(idDivToFill, data){
@@ -189,4 +189,24 @@
 	getRequest("webservices/sexe_amis.php?user="+user, function(data) {
 		generatePieChart("friend_chart", data);
 	});	
+	
+	getRequest("webservices/popularite_sexe.php?sexe=1&user="+user, function(data) {
+		generatePieChart("popularite_H", data);
+	});	
+	
+	getRequest("webservices/popularite_sexe.php?sexe=0&user="+user, function(data) {
+		generatePieChart("popularite_F", data);
+		$("#divF").hide();
+		
+	});	
+	
+	$('#radioH').click(function(){ 
+		$("#divH").show();
+		$("#divF").hide();
+	});
+	
+	$('#radioF').click(function(){ 
+		$("#divF").show();  
+		$("#divH").hide();
+	});
 });

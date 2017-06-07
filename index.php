@@ -25,6 +25,20 @@
 			<div id="pie_chart"></div>
 			<h2>Pourcentage d'amis masculins et féminins</h2>
 			<div id="friend_chart"></div>
+			
+			<h2>Popularité de votre profil pour un sexe donné par tranche de notation </h2>
+			<form>
+				<input checked type="radio" id="radioH" name="gender" value="H"> Homme<br>
+				<input type="radio" id="radioF" name="gender" value="F"> Femme<br>
+			</form>
+			<div id='divH' >
+				<h3>Homme</h3>
+				<div id="popularite_H"></div>
+			</div>
+			<div id='divF'>
+				<h3>Femme</h3>
+				<div id="popularite_F"></div>
+			</div>
 		</div>
 		<?php include ('structure/footer.php'); ?>
 	</body>
