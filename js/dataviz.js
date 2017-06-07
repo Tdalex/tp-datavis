@@ -16,6 +16,10 @@
 	var h = 300;
 	var w = 800;		
 	
+	/***************************************
+		QUESTION 1
+	****************************************/	
+	
 	function generateListeAmis(url, idDivToFill) { 
 		getRequest(url, function(dataset) {
 			var xScale = d3.scale.linear()
@@ -88,6 +92,12 @@
 		});
 	}
 	
+	generateListeAmis("webservices/liste_amis_user?user="+user, "listeAmis");
+	
+	/***************************************
+		QUESTION 2
+	****************************************/	
+	
 	function generatePopularity(url) { 
 		getRequest(url, function(dataset) {
 			var xScale = d3.scale.linear()
@@ -145,18 +155,13 @@
 			.style("fill", "red");
 		});	
 	}
+
+	generatePopularity("webservices/notations_user?user="+user);
 	
 	/***************************************
-		QUESTION 1
-	****************************************/
-	generateListeAmis("webservices/liste_amis_user?user="+user, "listeAmis");
-	generatePopularity("webservices/notations_user?user="+user);
-})	// getRequest("webservices/infos_user.php?user=2", function(data) {
-	// getRequest("webservices/infos_user.php?user=2", function(data) {
-	// 	console.log(data);
-	// });
-
-	/* D3 Bar chart : Pourcentage des messages envoyés */
+		QUESTION 3
+	****************************************/	
+	
 	function generatePieChart(idDivToFill, data){
 		var plot1 = $.jqplot(idDivToFill, [data], {
 			gridPadding: {top:0, bottom:38, left:0, right:0},
@@ -180,5 +185,5 @@
 
 	getRequest("webservices/destinataire_message_user.php?user="+user, function(data) {
 		generatePieChart("pie_chart", data);
-	});
+	});	
 });
