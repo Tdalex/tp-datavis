@@ -151,4 +151,34 @@
 	****************************************/
 	generateListeAmis("webservices/liste_amis_user?user="+user, "listeAmis");
 	generatePopularity("webservices/notations_user?user="+user);
-})
+})	// getRequest("webservices/infos_user.php?user=2", function(data) {
+	// getRequest("webservices/infos_user.php?user=2", function(data) {
+	// 	console.log(data);
+	// });
+
+	/* D3 Bar chart : Pourcentage des messages envoyés */
+	function generatePieChart(idDivToFill, data){
+		var plot1 = $.jqplot(idDivToFill, [data], {
+			gridPadding: {top:0, bottom:38, left:0, right:0},
+			seriesDefaults:{
+				renderer:$.jqplot.PieRenderer, 
+				trendline:{ show:false }, 
+				rendererOptions: { padding: 8, showDataLabels: true, sliceMargin: 6, startAngle: -90 }
+			},
+			legend:{
+				show:true, 
+				placement: 'inside', 
+				rendererOptions: {
+					numberRows: data.length
+				}, 
+				location:'ne',
+				marginTop: '15px'
+			}       
+		});
+		
+	}
+
+	getRequest("webservices/destinataire_message_user.php?user="+user, function(data) {
+		generatePieChart("pie_chart", data);
+	});
+});
