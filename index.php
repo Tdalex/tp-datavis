@@ -10,6 +10,8 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery.jqplot.min.js"></script>
 		<script type="text/javascript" src="js/d3.min.js"></script>
+
+		<script type="text/javascript" src="js/renderer/jqplot.pieRenderer.js"></script>
 		
 		<script type="text/javascript"> const user = <?php echo $_GET['user']; ?></script>
 		<script type="text/javascript" src="js/dataviz.js"></script>
@@ -22,6 +24,8 @@
 				<h1>Evolution de la popularité au fil du mois (en rouge)</h1>
 				<div id="listeAmis"></div>
 			</div>
+			<h2>Pourcentage des messages envoyés à des amis et à des non amis</h2>
+			<div id="pie_chart"></div>
 		</div>
 		<?php include ('structure/footer.php'); ?>
 	</body>
