@@ -23,7 +23,7 @@
 				.range([0, w]);
 				
 			var yScale = d3.scale.linear()
-				.domain([0, d3.max(dataset, function(d) {return d[1]+5;})])
+				.domain([0, 60])
 				.range([h-24, 0]);
 			
 			var xAxis = d3.svg.axis()
@@ -45,7 +45,7 @@
 			.enter()	
 			.append("circle")
 			.attr('cx', function(d){ return xScale(parseInt(d[2].substring(8,11))+1);})
-			.attr('cy', function(d){ return yScale(d[1]);})
+			.attr('cy', function(d){ return yScale(d[1]-0.5);})
 			.attr('r', 5);
 			
 			svg
@@ -56,7 +56,7 @@
 			.text(function(d){
 				return d[1] + ', ' + d[2];
 			})
-			.attr('x', function(d){ return xScale(parseInt(d[2].substring(8,11)));})
+			.attr('x', function(d){ return xScale(parseInt(d[2].substring(8,11))+1.2);})
 			.attr('y', function(d){ return yScale(d[1]-3);});
 			
 			svg
@@ -112,7 +112,7 @@
 			.enter()	
 			.append("circle")
 			.attr('cx', function(d){ return xScale(parseInt(d[3].substring(8,11))+1);})
-			.attr('cy', function(d){ return yScale(d[2]);})
+			.attr('cy', function(d){ return yScale(d[2]-0.2);})
 			.attr('r', 5)
 			.style("fill", "red");
 			
@@ -125,7 +125,7 @@
 				return d[2] + ', ' + d[3];
 			})
 			.attr('x', function(d){ return xScale(parseInt(d[3].substring(8,11))+0.5);})
-			.attr('y', function(d){ return yScale(d[2]-0.3);})
+			.attr('y', function(d){ return yScale(d[2]-0.6);})
 			.style("fill", "red");
 			
 			d3.select("svg")
