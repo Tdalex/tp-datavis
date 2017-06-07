@@ -20,8 +20,7 @@
 		<?php include ('structure/header.php'); ?>
 		<div id="content">
 			<div class="listeAmis" id="bar_chart_random_values">
-				<h1>Evolution du nombre d’amis au fil du mois (en noir) </h1>
-				<h1>Evolution de la popularité au fil du mois (en rouge)</h1>
+				<h2>Evolution du nombre d’amis au fil du mois (en noir) et évolution de la popularité au fil du mois (en rouge)</h2>
 				<div id="listeAmis"></div>
 			</div>
 			<h2>Pourcentage des messages envoyés à des amis et à des non amis</h2>
