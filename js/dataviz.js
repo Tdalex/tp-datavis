@@ -186,4 +186,7 @@
 	getRequest("webservices/destinataire_message_user.php?user="+user, function(data) {
 		generatePieChart("pie_chart", data);
 	});	
+	getRequest("webservices/sexe_amis.php?user="+user, function(data) {
+		generatePieChart("friend_chart", data);
+	});	
 });

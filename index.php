@@ -23,6 +23,8 @@
 			<div id="listeAmis"></div>
 			<h2>Pourcentage des messages envoyés à des amis et à des non amis</h2>
 			<div id="pie_chart"></div>
+			<h2>Pourcentage d'amis masculins et féminins</h2>
+			<div id="friend_chart"></div>
 		</div>
 		<?php include ('structure/footer.php'); ?>
 	</body>
